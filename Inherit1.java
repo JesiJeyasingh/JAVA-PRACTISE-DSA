@@ -136,7 +136,7 @@ class Inherit1{
 //------------------MULTIPLE INHERITANCE(INTERFACE)
 
 
-/* interface A
+ /*interface A
  {
 	 void play();
 	 
@@ -147,7 +147,7 @@ class Inherit1{
 	 
  }
  class C implements A,B{
-	 @Override
+	 
 	 public void play()
 	 {
 		 System.out.println("c implementation");
@@ -162,6 +162,7 @@ class Inherit1{
 	 }
  }
  */
+ 
  
  interface A
  {
@@ -180,7 +181,14 @@ class Inherit1{
 	 
  }
  class C implements A,B{
-	
+	 
+	public void play()
+	{
+		A.super.play();
+		B.super.play();
+		System.out.println("c implementation");
+	}
+ 
  }
  class Inherit1
  {
