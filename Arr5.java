@@ -15,7 +15,7 @@ class Arr5
 			}
 			num=num/10;
 		}
-		System.out.println(copy);
+		System.out.println("largedid"+copy);
 	}
 	
 	public void smallDig(int num)
