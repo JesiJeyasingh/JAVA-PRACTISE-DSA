@@ -691,6 +691,30 @@ class Arr5
 		 System.out.println(diff);
 	 }*/
 	 
+	 
+	 public void secLarge(int num)
+	 {
+		 int first=0;
+		 int second=0;
+		 while(num>0)
+		 {
+			 int rem=num%10;
+			 if(rem>first)
+			 {
+				 second=first;
+				 first=rem;
+				
+			 }
+			 else if(rem!=first&&rem>second)
+			 {
+				 second=rem;
+			 }
+			 num=num/10;
+			 
+		 }
+		 System.out.println(second);
+	 }
+	  
 			 
 	 
 			 
@@ -761,6 +785,7 @@ a.arithmeticPro(2,3,5);
 a.arithmeticProSum(2,3,3);
 a.geometicPro(2,3,5);
 a.geometicProSum(2,3,3);
+a.secLarge(12345);
 //a.aritProgre(2,5);
 
 
