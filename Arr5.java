@@ -181,16 +181,28 @@ class Arr5
 	
 	public void firstDigit(int num) // this also 
 	{
-		int first=num/10000;
+		/*int first=num/10000;
 		System.out.println(first);
+		*/
+		while(num>=10)
+		{
+	          num=num/10;
+			
+		}
+		System.out.println("first digit"+num);
+			
 	}
 	
 	public void sumFirLas(int num)
 	{
-		int first=num/10000;
-		int last =num%10;
-		int sum=first+last;
-		System.out.println(sum);
+		int copy=num;
+		int last=num%10;
+		while(num>=10)
+		{
+			num=num/10;
+		}
+		System.out.println("first"+" "+num+" "+"last"+" "+last);
+		System.out.println("sum"+(num+last));
 	}
 	 
 	 
@@ -213,6 +225,50 @@ class Arr5
 		 }
 	 }
 	 
+	 public void armsNum1(int num)
+	 {
+		 int copy=num;
+		 int temp=num;
+		 
+		 
+		 int count=0;
+		 //count digits
+		 while(temp>0)
+		 {
+			 int remm=temp%10;
+			 count++;
+			  temp=temp/10;
+		 }
+		 
+		 
+		 int sum=0;
+		 
+		 //find the sum of armsNum
+		 while(num>0)
+		 {
+			 int rem=num%10;
+			 int fact=1;
+			 for(int i=1;i<=count;i++)
+			 {
+				//sum =sum+rem
+				fact=fact*rem;
+			 }
+			  sum=sum+fact;
+			 num=num/10;
+		 }
+		 if(sum==copy)
+		 {
+			 System.out.println("armstsorn nummmber");
+		 }
+		 else
+		 {
+			 System.out.println("not a  armsttong number");
+		 }
+	 }
+		 
+			 
+			 
+	 
 	 public void primeNum(int num)
 	 {
 		 int count=0;
@@ -232,7 +288,7 @@ class Arr5
 		}
 	 }
 	 
-	 public void primeRange(int num)//doubt please clari it 
+	/* public void primeRange(int num)//doubt please clari it 
 	 {
 		 int count=0;
 		 for(int i=1;i<=num;i++)
@@ -252,7 +308,29 @@ class Arr5
 		 }
 		 System.out.println();
 		
+	 }*/
+	 
+	 
+	 public void primeRange(int start,int end)
+	 {
+		 for(int num=start;num<=end;num++)
+		 {
+			 int count=0;
+			 for(int i=1;i<=num;i++)
+			 {
+				 if(num%i==0)
+				 {
+					 count++;
+				 }
+			 }
+			 if(count==2)
+			 {
+				 System.out.println("num"+" ");
+			 }
+		 }
 	 }
+	 
+	 
 	 
 	 public void perfectNum(int num)
 	 {
@@ -337,7 +415,7 @@ class Arr5
 		 }
 	 }
 	 
-	 public void automorphivNum(int num)
+	/* public void automorphivNum(int num)
 	 {
 		 int copy=num;
 		 int ans=num*num;
@@ -349,7 +427,28 @@ class Arr5
 		 {
 			 System.out.println("not a automorphic");
 		 }
+	 }*/
+	 
+	 public void automorphicNum(int num)
+	 {
+		 int copy=num;
+		 int square=num*num;
+		 
+		 while(num>0)
+		 {
+			 int digit1=num%10;
+			 int digit2=square%10;
+			 if(digit1!=digit2)
+			 {
+				 System.out.println("not a automorphic");
+				 return;
+			 }
+			num=num/10;
+			square=square/10;
+		 }
+		  System.out.println("automorphic");
 	 }
+			 
 	 
 	 public void factNum(int num)
 	 {
@@ -414,15 +513,25 @@ class Arr5
 	 
 	 public void lcmNum(int a,int b)
 	 {
-		 int lcm=0;
-		 for(int i=1;i<=a&&i<=b;i++)
+		 int max=0;
+		 if(a>b)
 		 {
-			 if(i%a==0&&i%b==0)
-			 {
-				 lcm=i;
-			 }
+			 max=a;
 		 }
-		 System.out.println("lcm"+lcm);
+		 else{
+			 max=b;
+		 }
+		 while(true)
+		 {
+			 if(max%a==0&&max%b==0)
+			 {
+				 System.out.println(max);
+				 break;
+			 }
+			 max++;
+		 }
+			 
+		 
 	 }
 	 
 	 
@@ -468,13 +577,13 @@ class Arr5
 		 int x=a;
 		 int y=b;
 		 
-		 while(y>0)
+		 while(b>0)
 		 {
-			 int rem=x%y;
-			 x=y;
-			 y=rem;
+			 int rem=a%b;
+			 a=b;
+			 b=rem;
 		 }
-		 int gcd=x;
+		 int gcd=a;
 		  int lcm=(x*y)/gcd;
 		  System.out.println("gcdUsingLcm"+lcm);
 	 }
@@ -621,8 +730,10 @@ a.firstDigit(12345);
 a.sumFirLas(12345);
 a.armsNum(153);
 a.armsNum(123);
+a.armsNum1(153);
+a.armsNum1(1234);
 a.primeNum(7);
-a.primeRange(20);
+a.primeRange(2,20);
 a.perfectNum(6);
 a.perfectNum(9);
 a.neonNum(9);
@@ -632,7 +743,7 @@ a.spyNum(123);
 a.spyNum(87);
 a.harshadNum(18);
 a.harshadNum(12);
-a.automorphivNum(25);
+a.automorphicNum(25);
 a.factNum(5);
 //a.factNum1(4);
 a.strongNum(145);
