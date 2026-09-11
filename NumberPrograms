@@ -1,5 +1,5 @@
-class Arr4{
-	
+class NumberPrograms{
+	//=================NUMBER PROGRAMS 
 	//===========OPERATORS
 	public String eligVote(int num)
 	{

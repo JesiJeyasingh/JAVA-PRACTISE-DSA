@@ -1,6 +1,6 @@
-class Arr5
+class NumberPrograms2
 {
-	
+	//==========================NUMBER PROGRAMS
 	
 	public void largeDig(int num)
 	{
