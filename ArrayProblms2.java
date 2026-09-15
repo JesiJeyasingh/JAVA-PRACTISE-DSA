@@ -198,6 +198,7 @@ for(int i=0;i<odd.length;i++)
 
 
    //better approach
+/*
 public static void main(String[] args)
 {
 int[] arr={22,11,33,44,55};
@@ -250,7 +251,7 @@ for(int i=0;i<evenarr.length;i++)
 }
 }
  
-
+*/
 
 /*
    public static void main(String[] args)
@@ -276,4 +277,135 @@ for(int i=0;i<evenarr.length;i++)
 	}
 }
 }*/
+	
+/*
+public static void main(String[] args)
+{
+	int[] arr={1,2,3,4,5};
+	int max=arr[0];
+	int min=0;
+	for(int i=1;i<arr.length;i++)
+	{
+		if(arr[i]>max)
+		{
+			min=max;
+			max=arr[i];
+		}
+	}
+	System.out.println("max:"+max+" "+"neg:"+min );
+	int diff=max-min;
+	System.out.println("diff"+diff);
+}
+}*/
+
+
+/*    
+     // DIFFERNCE BTW MAX AND MIN ELEMENTS
+public static void main(String[] args)
+{
+	int[] arr={1,2,3,4,5};
+	int max=arr[0];
+	int min=arr[0];
+	for(int i=0;i<arr.length;i++)
+	{
+		if(arr[i]>max)
+		{
+			max=arr[i];
+		}
+	}
+	for(int i=0;i<arr.length;i++)
+	{
+		if(arr[i]<min)
+		{
+			min=arr[i];
+		}
+	}
+	System.out.println("max:"+max+" "+"min:"+min );
+	int diff=max-min;
+	System.out.println("diff"+diff);
+}
+}
+*/
+
+
+/*
+
+
+    //FIRST & LAST OCCURENCE
+public static void  main(String[] args)
+{
+	int[] arr={10,10,29,30,10,10,30,20,30,10};
+	int search=10;
+	int fcount=0;
+	int lcount=0;
+	
+	int fcountIndex=-1;
+	int lcountIndex=-1;
+	for(int i=0;i<arr.length;i++)
+	{
+		if(arr[i]==search&&fcount==0)
+		{
+			fcountIndex=i;
+			fcount++;
+		}
+		if(arr[i]==search)
+		{
+			lcountIndex=i;
+			lcount++;
+		}
+		
+		
+	}
+	System.out.println("firstOcuurence"+fcountIndex);
+	System.out.println("lastOcuurence"+lcountIndex);
+	
+	
+	}
+	}
+	
+*/	
+
+
+
+public static void main(String[] args)
+{
+	int[] arr={1,2,5,4,3,2,9,4};
+	for(int i=1;i<arr.length;i++)
+	{
+	if(arr[i]>arr[i-1])
+	{
+			
+
+	}
+	else
+	{
+		System.out.println("not sorted");
+	}
+	}
+	System.out.println("sorted");
+
+}
+}
+
+
+/*public static void main(String[] args)
+{
+	int[] arr={10,20,10,20,30,40,50};
+	int dupli=-1;
+	for(int i=0;i<arr.length;i++)
+	{
+		for(int j=0;j<arr.length;j++)
+		{
+			if(arr[i+1]==arr[i])
+			{
+				dupli=arr[i];
+			}
+		}
+		System.out.println("duplicate elemnest"+dupli);
+	}
+}
+}
+
+*/
+
 	
