@@ -1,5 +1,8 @@
-<<<<<<< HEAD
+# Compiled Java files
 *.class
-=======
-*.class 
->>>>>>> b37ae9f (Added BankAccount encapsulation)
+
+# Eclipse output
+bin/
+
+# Maven build output
+target/
